@@ -95,7 +95,7 @@ def post_optim_mol(args, pdb_list, accelerator, data, com_coord_pred, com_coord_
     return
 
 
-# 获得test dataset
+# test dataset
 test = get_data(args, logger=logger, flag=3)
 logger.log_message(f"Number data of testset: {len(test)}")
 

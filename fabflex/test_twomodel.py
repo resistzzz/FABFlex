@@ -57,7 +57,6 @@ torch.multiprocessing.set_sharing_strategy('file_system')
 last_epoch = -1
 args.last_epoch = last_epoch
 
-# 获得protein训练阶段的
 train, valid, test = get_data(args, logger=logger, flag=3)
 logger.log_message(f"data point train: {len(train)}, valid: {len(valid)}, test: {len(test)}")
 

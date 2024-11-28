@@ -88,10 +88,10 @@ if __name__ == '__main__':
 
     fabind_file = './fabind_rmsd.txt'
     fabind_plus_file = "./fabind_plus_rmsd.txt"
-    R2Fdock_file = "./R2FDock_rmsd.txt"
+    FABFlex_file = "./FABFlex_rmsd.txt"
     analyze_fabind(fabind_file, None, method='fabind')
     analyze_fabind(fabind_plus_file, None, method='fabind+')
-    analyze_fabind(R2Fdock_file, None, method='R2FDock')
+    analyze_fabind(FABFlex_file, None, method='FABFlex')
 
     print(f"----------------------------------------------------------Unseen protein----------------------------------------------------------")
     unseen_file = "./unseen_test_pdb.txt"
@@ -106,4 +106,4 @@ if __name__ == '__main__':
     # analyze_unseen(df_dynamic, "rmsd", unseen_pdbs, method="DynamicBind")
     analyze_fabind(fabind_file, unseen_pdbs, method='fabind')
     analyze_fabind(fabind_plus_file, unseen_pdbs, method='fabind+')
-    analyze_fabind(R2Fdock_file, unseen_pdbs, method='R2FDock')
+    analyze_fabind(FABFlex_file, unseen_pdbs, method='FABFlex')

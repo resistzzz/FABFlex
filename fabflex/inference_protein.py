@@ -64,9 +64,9 @@ args.device = device
 # #################### Define Model ########################
 model = get_model(args, logger)
 
-args.ckpt = '/root/autodl-tmp/results/epoch_175/pytorch_model.bin'
-args.ckpt = '/root/autodl-tmp/results/epoch_427/pytorch_model.bin'
-args.ckpt = '/root/autodl-tmp/results/epoch_235_Ti6/pytorch_model.bin'
+args.ckpt = './ckpt/epoch_175/pytorch_model.bin'
+args.ckpt = './ckpt/epoch_427/pytorch_model.bin'
+args.ckpt = './ckpt/epoch_235_Ti6/pytorch_model.bin'
 
 
 logger.log_message(f"=================== Loading Model: {args.ckpt} ===================")

@@ -58,7 +58,7 @@ torch.multiprocessing.set_sharing_strategy('file_system')
 last_epoch = -1
 args.last_epoch = last_epoch
 
-# 获得protein训练阶段的
+# protein
 train, valid, test = get_data(args, logger=logger, flag=2)
 logger.log_message(f"data point train: {len(train)}, valid: {len(valid)}, test: {len(test)}")
 
@@ -73,7 +73,7 @@ args.device = device
 # #################### Define Model ########################
 model = get_model(args, logger)
 if not args.not_load_ckpt:
-    # 加载pretrained model
+    # load pretrained model
     logger.log_message(f"=================== Loading Pretrained {args.ckpt} Model ===================")
     model.load_state_dict(torch.load(args.ckpt, map_location=torch.device('cpu')), strict=False)
     # model.load_state_dict(torch.load(args.ckpt))

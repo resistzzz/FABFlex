@@ -1,10 +1,10 @@
 import torch
 
-TankBind_model = '/root/autodl-tmp/binddataset/ckpt/tankbind_ckpt.pt'
-FABind_model = '/root/autodl-tmp/binddataset/ckpt/fabind_best_model.bin'
-FABindPlus_model = '/root/autodl-tmp/binddataset/ckpt/best_layer5_ckpt.bin'
-DynamicBind_model = '/home/workspace/DynamicBind/workdir/big_score_model_sanyueqi_with_time/ema_inference_epoch314_model.pt'
-FABFlex_model = '/root/autodl-tmp/results/epoch_235_Ti6/pytorch_model.bin'
+TankBind_model = './ckpt/tankbind_ckpt.pt'
+FABind_model = './ckpt/fabind_best_model.bin'
+FABindPlus_model = './ckpt/best_layer5_ckpt.bin'
+DynamicBind_model = './ckpt/DynamicBind/workdir/big_score_model_sanyueqi_with_time/ema_inference_epoch314_model.pt'
+FABFlex_model = './ckpt/epoch_235_Ti6/pytorch_model.bin'
 
 def return_parameters(model_path, model_name=''):
     # 假设你已经有state_dict存储的文件，加载它
