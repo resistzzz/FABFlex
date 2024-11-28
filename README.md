@@ -17,7 +17,7 @@
 
 ### How to make inference using FABFlex:
 1. download the datasets.
-2. download the ckpt from Google Drive: <a href="https://drive.google.com/file/d/1bhJlrbq-fVAkM5qWIMoU7ye4NnIFXJOR/view?usp=drive_link" class="underline" target="_blank">Click this URL</a>
+2. download the ckpt from Google Drive: To ensure anonymous, we upload after review
 3. install the environment
 4. run `fabflex/inference.py` as follows:
 ```
@@ -53,7 +53,7 @@ python fabflex/inference_post_optim.py \
 - [ ] [Code] Clean all related codes
 - [x] [Code] Release inference codes of FABFlex
 - [ ] [Dataset] Upload preprocessed datasets, it is approximately 22.8 GB
-- [x] [Ckpt] Upload checkpoint
+- [ ] [Ckpt] Upload checkpoint
 - [x] [Readme] Write a README
 - [ ] [Inference] Add a inference code from SMILES and amino sequence
 
