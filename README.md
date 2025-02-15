@@ -60,7 +60,7 @@ Before joint training the whole FABFlex model, you need to introduce a two-stage
 1. Pretrain the "pocket prediction module + ligand docking module" under rigid docking conditions: using (holo protein, apo ligand) to predict the holo ligand structure. Here, we use the checkpoint provided by FABind+, which is named as `pretrain_pocket_ligand_docking.bin` in the shared Google Drive. If you want to retrain this model, you can refer to the code in <a href="https://github.com/QizhiPei/FABind" class="underline" target="_blank">FABind+</a>
 2. Pretrain the "pocket docking module" using (apo pocket, holo ligand) to predict the holo pocket structure. The trained checkpoint is provided in the shared Google Drive, named as `protein_ckpt.bin`. Run `main_pro_joint.py` as follows:
 ```
-accelerate launch two-models/main_pro_joint.py \
+accelerate launch fabflex/main_pro_joint.py \
     --batch_size 2 --root_path ./binddataset --ckpt $ckpt_path \
     --pocket_radius 20 --min_pocket_radius 20 --pocket_radius_buffer 5 \
     --resultFolder $resultFolder \
@@ -88,7 +88,7 @@ accelerate launch two-models/main_pro_joint.py \
 
 3. Joint train FABFlex model using (apo protein, apo ligand) to predict the structures of (holo pocket, holo ligand). The trained checkpoint is provided in the shared Google Drive, named as `FABFlex_model.bin`. Run `main_fatwo_joint.py` as follows:
 ```
-accelerate launch two-models/main_fatwo_joint.py \
+accelerate launch fabflex/main_fatwo_joint.py \
     --batch_size 2 --root_path ./binddataset \
     --ckpt ./ckpt/pretrain_pocket_ligand_docking.bin --ckpt_protein ./ckpt/protein_ckpt.bin --copy_two 2 \
     --pocket_radius 20 --min_pocket_radius 20 --pocket_radius_buffer 5 \
@@ -125,5 +125,4 @@ accelerate launch two-models/main_fatwo_joint.py \
 - [x] [Ckpt] Upload checkpoint
 - [x] [Readme] Write a README
 
-### 
 
