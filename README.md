@@ -17,7 +17,7 @@
 
 ### How to make inference using FABFlex:
 1. download the datasets.
-2. download the ckpt from Google Drive: To ensure anonymity, we upload after review
+2. download the ckpt from <a href="https://drive.google.com/drive/folders/1WXhDX1wuYrvtwwEZyZakAy5lxpNcQ0A5?usp=sharing" class="underline" target="_blank">Google Drive</a>
 3. install the environment
 4. run `fabflex/inference.py` as follows:
 ```
