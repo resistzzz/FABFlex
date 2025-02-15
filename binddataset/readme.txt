@@ -1,1 +1,1 @@
-put preprocessed dataset in this directory
+download the preprocessed dataset from Zenodo and put them in this directory

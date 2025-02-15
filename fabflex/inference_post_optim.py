@@ -107,7 +107,7 @@ args.device = device
 # #################### Define Model ########################
 model = get_model(args, logger)
 
-args.ckpt = './epoch_235_Ti6/pytorch_model.bin'
+args.ckpt = './ckpt/FABFlex_model.bin'
 
 logger.log_message(f"=================== Loading Model: {args.ckpt} ===================")
 pretrained_dict = torch.load(args.ckpt, map_location=torch.device('cpu'))
@@ -129,13 +129,10 @@ args.protein_epochs = 0
 torch.cuda.empty_cache()
 accelerator.wait_for_everyone()
 
-pattern = r"epoch_(\d+)"
-save_epoch = re.search(pattern, args.ckpt)
-save_epoch = save_epoch.group()
 args.save_rmsd = True
-write_path = f"write_ligand_epoch235_iter{args.total_iterative}"
-args.rmsd_file = f"{write_path}/{save_epoch}/metrics_post_optim.txt"
-args.out_path = f"{write_path}/{save_epoch}"
+write_path = f"write_ligand_iter{args.total_iterative}"
+args.rmsd_file = f"{write_path}/metrics_post_optim.txt"
+args.out_path = f"{write_path}"
 if not os.path.exists(args.out_path):
     os.makedirs(args.out_path)
 

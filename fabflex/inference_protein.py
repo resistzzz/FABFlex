@@ -64,10 +64,7 @@ args.device = device
 # #################### Define Model ########################
 model = get_model(args, logger)
 
-args.ckpt = './ckpt/epoch_175/pytorch_model.bin'
-args.ckpt = './ckpt/epoch_427/pytorch_model.bin'
-args.ckpt = './ckpt/epoch_235_Ti6/pytorch_model.bin'
-
+args.ckpt = './ckpt/FABFlex_model.bin'
 
 logger.log_message(f"=================== Loading Model: {args.ckpt} ===================")
 pretrained_dict = torch.load(args.ckpt, map_location=torch.device('cpu'))
@@ -93,8 +90,7 @@ pattern = r"epoch_(\d+)"
 save_epoch = re.search(pattern, args.ckpt)
 save_epoch = save_epoch.group()
 args.save_rmsd = True
-args.rmsd_file = f"write_pocket_epoch235/{save_epoch}/metrics_pocket.txt"
-args.out_path = f"write_pocket_epoch235/{save_epoch}"
+args.out_path = f"./results/write_pocket"
 if not os.path.exists(args.out_path):
     os.makedirs(args.out_path)
 
@@ -123,7 +119,7 @@ if accelerator.is_main_process:
     args.write_protein_to_pdb = True
     if args.write_protein_to_pdb:
         ori_pdb_files = []
-        pdb_directory_path = '/root/autodl-tmp/test_af2pdb'
+        pdb_directory_path = './binddataset/test_af2pdb'
         for pdb in pdb_list:
             found = False
             for file_name in os.listdir(pdb_directory_path):

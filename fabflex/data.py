@@ -86,10 +86,6 @@ class BindDataset(Dataset):
     
     @property
     def processed_file_names(self):
-        # return ['d3_with_clash_info.csv',
-        #         'protein_1d_3d.lmdb', 'af2_protein_1d_3d.lmdb',
-        #         'ligand_LAS_edge_index.lmdb', 'ligand_rdkit_coords.pt',
-        #         'esm2_t33_650M_UR50D.lmdb']
         return ['data_new.pt',
                 'protein_1d_3d.lmdb', 'af2_protein_1d_3d.lmdb',
                 'ligand_LAS_edge_index.lmdb', 'ligand_rdkit_coords.pt',

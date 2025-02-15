@@ -58,7 +58,6 @@ args.device = device
 # #################### Define Model ########################
 model = get_model(args, logger)
 eval_mode = 'PPDM'
-# args.ckpt = '/root/autodl-tmp/results/epoch_235_Ti6/pytorch_model.bin'
 if eval_mode == 'PPDM':
     args.ckpt = './ckpt/protein_113_ckpt.bin'
     pretrained_dict = torch.load(args.ckpt, map_location=torch.device('cpu'))
@@ -91,7 +90,6 @@ if eval_mode == 'FTPDM':
     # 更新当前模型的状态字典并加载预训练参数
     model_dict.update(filtered_pretrained_dict)
     model.load_state_dict(model_dict)
-
 
 
 if accelerator.is_main_process:
